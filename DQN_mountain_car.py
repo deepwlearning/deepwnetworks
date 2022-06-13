@@ -14,8 +14,8 @@ GYM_FRAME_STACK = 3
 # The Q-learning agent parameters
 BATCH_SIZE = 1024
 LR = .01                   # learning rate
-EPSILON = .1  # .95               # starting epsilon for greedy policy
-EPSILON_MIN = .1           # The minimal epsilon we want
+EPSILON = .01  # .95               # starting epsilon for greedy policy
+EPSILON_MIN = .01           # The minimal epsilon we want
 EPSILON_DECAY = .99995      # The minimal epsilon we want
 GAMMA = .99                # reward discount
 MEMORY_SIZE = 10000         # size of the replay buffer
@@ -25,7 +25,7 @@ MEMORY_SIZE = 10000         # size of the replay buffer
 EPISODES = 2500
 
 # Path to trained Net
-PATH = 'saved_nets/torch_mountain_car_enhanced_2500_ep.pt'
+PATH = 'saved_nets/torch_mountain_car.pt'
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
@@ -41,7 +41,7 @@ if __name__ == "__main__":
     # Init the DQN agent
     agent = DWN(state_shape, action_num, batch_size=BATCH_SIZE, epsilon=EPSILON, epsilon_min=EPSILON_MIN,
                 epsilon_decay=EPSILON_DECAY, memory_size=MEMORY_SIZE, learning_rate=LR, gamma=GAMMA)
-
+    agent.load_net(PATH)
     # Init list for information we need to collect during simulation
     num_of_steps = []
     coll_rewards = []
