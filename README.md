@@ -8,3 +8,15 @@ The proposed Deep W-Networks (DWN) algorithm takes advantage of the computationa
 
 The pretrained nets are for the DWN for the mountain car and deep sea environments. Running *DWN_mountain_car.py* and *DWN_deep_sea_treasure.py* shows the learned behaviour for the proposed DWM algorithm. To compare the behaviour to DQN, run *DQN_mountain_car.py* and *DWN_deep_sea_treasure.py*.
 
+
+## Citing
+
+Bibtex:
+```
+@inproceedings{hribar2023deep,
+  title={Deep W-Networks: Solving Multi-Objective Optimisation Problems With Deep Reinforcement Learning},
+  author={Hribar, Jernej and Hackett, Luke and Dusparic, Ivana},
+  booktitle={ICAART 2023: 15th International Conference on Agents and Artificial Intelligence},
+  year={2023}
+}
+```
